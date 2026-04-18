@@ -1,4 +1,7 @@
-const sparkle = document.getElementById('sparkle');
+document.addEventListener('DOMContentLoaded', () => {
+  // semua kode kamu taruh di sini
+
+  const sparkle = document.getElementById('sparkle');
 
 for (let i = 0; i < 20; i++) {
   const s = document.createElement('span');
@@ -61,8 +64,17 @@ function launchConfetti(multiplier = 1) {
   }
 }
 
+const bgm = document.getElementById('bgm');
+
 button.addEventListener('click', () => {
+  // play musik saat tombol ditekan
+  if (bgm.paused) {
+    bgm.volume = 1;
+    bgm.play();
+  }
+
   launchConfetti(1.6);
   setTimeout(() => launchConfetti(1.2), 180);
   setTimeout(() => launchConfetti(1.0), 360);
+});
 });
